@@ -84,11 +84,10 @@ Kontakt tel: 0600926196
       
     } catch (emailError) {
       console.error("Greška prilikom slanja emaila:", emailError);
-      // Ne prekidamo izvršenje ako email ne uspe, ali logujemo grešku
-      // U produkciji možda želiš da obavestiš korisnika da email nije prošao, ali je porudžbina primljena
+      
     }
 
-    // Vraćamo uspeh frontendu
+    
     return NextResponse.json({ message: 'Uspešno naručeno!' }, { status: 200 });
 
   } catch (error) {
@@ -96,3 +95,5 @@ Kontakt tel: 0600926196
     return NextResponse.json({ message: 'Greška na serveru' }, { status: 500 });
   }
 }
+
+//deploy da bi slanje mejla postalo aktivno
