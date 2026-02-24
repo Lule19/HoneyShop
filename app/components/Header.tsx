@@ -22,21 +22,28 @@ export default function Header() {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-yellow-500 bg-honeycomb-header shadow-md py-2 border-b border-yellow-600' 
-        : 'bg-transparent py-4 border-b border-yellow-600/40 backdrop-blur-[1px]'
-    }`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
+    <header className={`fixed top-0 w-full z-50 transition-[padding] duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+      {/* Background Layer - Separate from content for better performance */}
+      <div 
+        className={`absolute inset-0 -z-10 transition-all duration-300 ease-in-out ${
+          mobileMenuOpen
+            ? 'bg-yellow-600 bg-honeycomb-header border-b border-transparent shadow-none' // Match overlay exactly
+            : scrolled 
+              ? 'bg-yellow-500 bg-honeycomb-header shadow-md border-b border-yellow-600' 
+              : 'bg-transparent border-b border-yellow-600/40 backdrop-blur-[2px]'
+        }`}
+      />
+      
+      <div className="container mx-auto px-4 flex justify-between items-center relative z-50">
         <Link href="/" className="group z-50 relative" onClick={closeMobileMenu}>
-           <h1 className={`text-2xl md:text-3xl font-bold flex flex-col leading-tight tracking-wide uppercase font-serif ${scrolled || mobileMenuOpen ? 'text-white' : 'text-yellow-900 group-hover:text-yellow-700 transition'}`}>
+           <h1 className={`text-2xl md:text-3xl font-bold flex flex-col leading-tight tracking-wide uppercase font-serif transition-colors duration-300 ease-in-out ${scrolled || mobileMenuOpen ? 'text-white' : 'text-yellow-900 group-hover:text-yellow-700'}`}>
               <span className="text-sm font-sans font-normal tracking-[0.3em] ml-1 opacity-80">Pčelinjak</span>
               Petrović
            </h1>
         </Link>
         <nav className="flex items-center gap-4 md:gap-8">
           {/* Desktop Menu */}
-          <ul className={`hidden md:flex gap-8 font-medium text-lg ${scrolled ? 'text-yellow-50' : 'text-gray-800'}`}>
+          <ul className={`hidden md:flex gap-8 font-medium text-lg transition-colors duration-300 ${scrolled ? 'text-yellow-50' : 'text-gray-800'}`}>
             <li>
               <Link href="/" className={`hover:text-white cursor-pointer transition relative group ${scrolled ? 'text-yellow-100' : 'hover:text-yellow-900 text-gray-800'}`}>
                 Početna
@@ -60,7 +67,7 @@ export default function Header() {
           {/* Cart Button */}
           <button 
             onClick={() => setIsCartOpen(true)}
-            className={`relative p-3 rounded-full transition group hover:scale-105 active:scale-95 cursor-pointer z-50 ${
+            className={`relative p-3 rounded-full transition-all duration-300 group hover:scale-105 active:scale-95 cursor-pointer z-50 ${
               scrolled || mobileMenuOpen
                 ? 'bg-white/20 text-white hover:bg-white/30' 
                 : 'bg-yellow-600 text-white hover:bg-yellow-700 shadow-lg shadow-yellow-200'
@@ -76,8 +83,10 @@ export default function Header() {
 
           {/* Mobile Menu Button - Hamburger */}
           <button 
-            className={`md:hidden p-2 z-50 focus:outline-none ${scrolled || mobileMenuOpen ? 'text-white' : 'text-yellow-900'}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`md:hidden p-2 z-50 focus:outline-none relative transition-colors duration-300 ${scrolled || mobileMenuOpen ? 'text-white' : 'text-yellow-900'}`}
+            onClick={() => {
+                setMobileMenuOpen(!mobileMenuOpen);
+            }}
           >
              {mobileMenuOpen ? (
                 // X icon
@@ -94,7 +103,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-yellow-600 bg-honeycomb-header z-40 transition-transform duration-300 transform ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col items-center justify-center`}>
+        <div className={`fixed inset-0 bg-yellow-600 bg-honeycomb-header z-[45] transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} pt-20`}> 
             <ul className="flex flex-col gap-8 text-center text-white text-2xl font-bold font-serif">
               <li>
                 <Link href="/" onClick={closeMobileMenu} className="hover:text-yellow-200 transition">

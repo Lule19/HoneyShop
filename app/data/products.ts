@@ -3,6 +3,7 @@ export const products = [
       id: "bagremov-med",
       title: "Bagremov Med", 
       price: 1200, 
+      unit: "1kg",
       type: "Najprodavanije", 
       image: "/images/bagremov.jpg",
       shortDescription: "Blag, svetao i lagan. Kralj među medovima.",
@@ -19,6 +20,7 @@ export const products = [
       id: "livadski-med",
       title: "Livadski Med", 
       price: 1000, 
+      unit: "1kg",
       type: "Organsko", 
       image: "/images/livadski.jpg",
       shortDescription: "Bogatstvo cvetnih aroma sa netaknutih livada.",
@@ -34,6 +36,7 @@ export const products = [
     { 
       id: "suncokretov-med",
       title: "Suncokretov Med", 
+      unit: "1kg",
       price: 1100, 
       type: "Novo", 
       image: "/images/suncokret.jpg",
@@ -48,19 +51,20 @@ export const products = [
       usage: "Najbolje ga je koristiti u kristalisanom stanju (kao bonbonu) ili ga rastopiti u mlakom čaju."
     },
     { 
-      id: "sumski-med",
-      title: "Šumski Med", 
-      price: 1300, 
+      id: "propolis-kapi",
+      title: "Propolis kapi", 
+      unit: "0.03L",
+      price: 300, 
       type: "Premium", 
-      image: "/images/sumski.jpg",
-      shortDescription: "Taman, gust i bogat mineralima. Crno zlato.",
-      description: "Šumski med (medljikovac) ne potiče od cvetnog nektara, već od medne rose koju pčele sakupljaju sa listova šumskog drveća (hrast, bor, lipa). Mnogo je tamniji, gušći i manje sladak od cvetnih medova. Sadrži i do 13 puta više minerala od ostalih vrsta meda, posebno gvožđa.",
+      image: "/images/propolis.jpg",
+      shortDescription: "Prirodni antibiotik, antiseptik, antioksidans i imunomodulator",
+      description: "Moćna, lekovita smolasta materija koju pčele sakupljaju sa pupoljaka drveća i mešaju sa svojim enzimima radi zaštite košnice od virusa i bakterija.",
       benefits: [
-        "Nepravaziđen za popravljanje krvne slike (gvožđe)",
-        "Pomaže kod oporavka nakon teških bolesti",
-        "Izuzetan za sportiste zbog minerala",
-        "Jača srčani mišić"
+        "Imunitet: Povećava otpornost organizma i deluje protiv prehlada i gripa.",
+        "Antibakterijsko/Virusno dejstvo: Pomaže kod upala grla, ždrela, afti i paradentoze.",
+        "Koža i rane: Koristi se za tretiranje manjih površinskih rana, ekcema, akni i psorijaze.",
+        "Antioksidant: Pomaže u borbi protiv oksidativnog stresa."
       ],
-      usage: "Uzimati drvenom ili plastičnom kašičicom, zadržati u ustima dok se ne otopi."
+      usage: "Razmutiti par kapi u toploj vodi, takodje par kapi može se dodati u čaj ili na kašičicu meda."
     },
   ];

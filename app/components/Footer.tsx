@@ -1,4 +1,5 @@
 import React from 'react';
+import { Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -25,7 +26,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-xl">📧</span>
-                  <a href="mailto:info@pcelinjak-petrovic.rs" className="hover:text-yellow-300 transition">info@pcelinjak-petrovic.rs</a>
+                  <a href="mailto:pcelinjakpetrovic2026@gmail.com" className="hover:text-yellow-300 transition">pcelinjakpetrovic2026@gmail.com</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-xl">📞</span>
@@ -38,25 +39,19 @@ export default function Footer() {
           {/* Druga kolona - Mreže i Brzi linkovi - CENTRIRANO */}
           <div className="flex flex-col items-center text-center">
              <h5 className="font-bold text-xl mb-6 text-yellow-400">Povežite se sa nama</h5>
-             <div className="flex gap-4 mb-8">
+             <div className="flex gap-4 mb-8 justify-center md:justify-start lg:justify-center">
                 {/* Instagram */}
-                <a href="#" className="transform hover:scale-110 transition duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-tr from-yellow-600 to-yellow-400 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xl">
-                    IG
+                <a 
+                  href="https://www.instagram.com/medexserbia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="group transform hover:scale-110 transition duration-300"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-tr from-yellow-600 via-yellow-500 to-yellow-400 rounded-full flex items-center justify-center shadow-lg text-white group-hover:bg-gradient-to-tr group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-orange-400 transition-all duration-300 transform group-hover:rotate-6">
+                    <Instagram size={24} />
                   </div>
                 </a>
-                {/* Facebook */}
-                <a href="#" className="transform hover:scale-110 transition duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xl">
-                    FB
-                  </div>
-                </a>
-                {/* TikTok */}
-                <a href="#" className="transform hover:scale-110 transition duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-tr from-gray-900 to-black rounded-full flex items-center justify-center shadow-lg text-white font-bold text-xs border border-gray-600">
-                    TT
-                  </div>
-                </a>
+                
              </div>
              <p className="text-yellow-100/600 text-sm italic max-w-xs">
                "Pratite naše dnevne priče iz pčelinjaka i saznajte zanimljivosti o svetu pčela."

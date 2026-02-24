@@ -71,7 +71,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             {/* Desna strana - Detalji */}
             <div className="flex flex-col justify-center h-full pt-4">
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{product.title}</h1>
-                <div className="text-3xl font-bold text-yellow-600 mb-6">{product.price} RSD <span className="text-lg text-gray-400 font-normal">/ 1kg</span></div>
+                <div className="text-3xl font-bold text-yellow-600 mb-6">{product.price} RSD <span className="text-lg text-gray-400 font-normal">/ {product.unit}</span></div>
                 
                 <p className="text-gray-600 text-lg leading-relaxed mb-8 border-b border-yellow-100 pb-8">
                     {product.description}

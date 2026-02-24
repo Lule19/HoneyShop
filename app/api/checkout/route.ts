@@ -36,58 +36,57 @@ UKUPNO: ${total} RSD
     const customerEmailContent = `
 Poštovani/a ${customer.name},
 
-Hvala Vam na porudžbini u Med Shop-u!
-Vaša porudžbina je primljena i biće uskoro poslata.
+Hvala Vam na porudžbini proizvoda sa Pčelinjaka Petrović!
+Vaša porudžbina je uspešno primljena.
 
 Detalji porudžbine:
 ${itemsList}
 
 Ukupno za plaćanje (pouzećem): ${total} RSD
 
-Očekujte poziv kurira u narednih 2-3 dana.
+Očekujte poziv kurira u narednih 2-3 radna dana.
 Hvala na poverenju!
-Med Shop Tim
+
+Srdačan pozdrav,
+Pčelinjak Petrović
+Kontakt tel: 0600926196
 `;
 
     // --- SLANJE EMAILA (NODEMAILER) ---
     
-    // NAPOMENA: Da bi slanje emaila zaista radilo, potrebno je da uneseš
-    // prave podatke od svog email naloga (npr. Gmail) u .env fajl.
-    // Za sada, samo ispisujemo sadržaj emaila u konzolu (terminal) da bi video da radi.
-
-    /* 
-    // OVAKO BI IZGLEDAO PRAVI KOD ZA SLANJE (otkomentariši kad dodaš podatke):
-    
+    // Konfiguracija transportera (Gmail)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // tvojgmail@gmail.com
-        pass: process.env.EMAIL_PASS, // tvoja App Password šifra (ne obična šifra!)
+        user: process.env.EMAIL_USER, // Tvoj email (iz .env.local fajla)
+        pass: process.env.EMAIL_PASS, // Tvoja App Password šifra (iz .env.local fajla)
       },
     });
 
-    // Slanje tebi
-    await transporter.sendMail({
-      from: '"Med Shop" <mojshop@gmail.com>',
-      to: 'mojemail@gmail.com', // Tvoj email gde primaš porudžbine
-      subject: `Nova porudžbina: ${customer.name} - ${total} RSD`,
-      text: ownerEmailContent,
-    });
+    try {
+      // 1. Slanje EMAILA VLASNIKU (Tebi)
+      await transporter.sendMail({
+        from: '"Med Shop Sistem" <pcelinjakpetrovic2026@gmail.com>', // Pošiljalac
+        to: 'pcelinjakpetrovic2026@gmail.com', // Primalac (TI)
+        subject: `Nova porudžbina: ${customer.name} - ${total} RSD`,
+        text: ownerEmailContent,
+      });
 
-    // Slanje kupcu
-    await transporter.sendMail({
-      from: '"Med Shop" <mojshop@gmail.com>',
-      to: customer.email,
-      subject: 'Potvrda porudžbine - Med Shop',
-      text: customerEmailContent,
-    });
-    */
+      // 2. Slanje EMAILA KUPCU (Potvrda)
+      await transporter.sendMail({
+        from: '"Pčelinjak Petrović" <pcelinjakpetrovic2026@gmail.com>', 
+        to: customer.email, 
+        subject: 'Potvrda porudžbine - Pčelinjak Petrović',
+        text: customerEmailContent,
+      });
 
-    // SIMULACIJA (briši ovo kad namestiš pravo slanje)
-    console.log("==================================================");
-    console.log("SIMULIRANO SLANJE EMAILA (check-out success):");
-    console.log(ownerEmailContent);
-    console.log("==================================================");
+      console.log("Emailovi uspešno poslati!");
+      
+    } catch (emailError) {
+      console.error("Greška prilikom slanja emaila:", emailError);
+      // Ne prekidamo izvršenje ako email ne uspe, ali logujemo grešku
+      // U produkciji možda želiš da obavestiš korisnika da email nije prošao, ali je porudžbina primljena
+    }
 
     // Vraćamo uspeh frontendu
     return NextResponse.json({ message: 'Uspešno naručeno!' }, { status: 200 });
