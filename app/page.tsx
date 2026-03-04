@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
 import { products } from "./data/products";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -119,21 +120,21 @@ export default function Home() {
               <div className="text-4xl">🏔️</div>
               <h4 className="text-xl font-bold text-gray-900">100% Prirodno</h4>
               <p className="text-gray-600">
-                Pčele skupljaju med na dve velike paše, na netaknutim predelima ciste prirode u Gornjoj Trnavi i Mokrinu.
+                Pčele skupljaju med na dve velike paše, na netaknutim predelima ciste prirode Šumadije i Vojvodine.
               </p>
             </div>
             <div className="space-y-4">
               <div className="text-4xl">🚚</div>
               <h4 className="text-xl font-bold text-gray-900">Brza Dostava</h4>
               <p className="text-gray-600">
-                Danas poručite, sutra je med na vašem stolu. Besplatna dostava preko 5000 RSD.
+                Danas poručite, za nekoliko dana med je na vašem stolu. Besplatna dostava preko 10000 RSD.
               </p>
             </div>
             <div className="space-y-4">
               <div className="text-4xl">🛡️</div>
               <h4 className="text-xl font-bold text-gray-900">Garancija Kvaliteta</h4>
               <p className="text-gray-600">
-                Svaka tegla je testirana i odobrena. Ako niste zadovoljni, vraćamo novac.
+                Svaka tegla je testirana i odobrena. Možete biti bez sumnje o kvalitetu meda, 100% je prirodan.
               </p>
             </div>
           </div>
@@ -153,8 +154,13 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Članak 1 */}
           <Link href="/blog/kako-prepoznati-pravi-med" className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition group block">
-            <div className="h-48 bg-yellow-100 relative overflow-hidden">
-               <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 scale-110 group-hover:scale-125 transition-transform duration-500">🍯</div>
+            <div className="h-60 bg-yellow-100 relative overflow-hidden">
+               <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50 scale-110 group-hover:scale-100 transition-transform duration-500"><Image 
+                src="/images/pcele.jpg" 
+                alt="Suncokret" 
+                fill 
+                className="object-cover"
+              /></div>
             </div>
             <div className="p-6">
               <div className="text-sm text-yellow-600 font-bold mb-2">SAVETI</div>
@@ -170,8 +176,8 @@ export default function Home() {
 
           {/* Članak 2 */}
           <Link href="/blog/kristalizacija-meda-dobar-ili-los-znak" className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition group block">
-            <div className="h-48 bg-orange-100 relative overflow-hidden">
-               <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 scale-110 group-hover:scale-125 transition-transform duration-500">🧊</div>
+            <div className="h-60 bg-yellow-100 relative overflow-hidden">
+               <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-65 scale-110 group-hover:scale-100 transition-transform duration-500"><Image src="/images/kristal.jpg" alt="Kristal" fill className="object-cover"  /> </div>
             </div>
             <div className="p-6">
               <div className="text-sm text-yellow-600 font-bold mb-2">EDUKACIJA</div>
@@ -187,8 +193,15 @@ export default function Home() {
 
           {/* Članak 3 */}
           <Link href="/blog/zasto-selimo-pcele-u-banat" className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition group block">
-            <div className="h-48 bg-green-100 relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 scale-110 group-hover:scale-125 transition-transform duration-500">🚛</div>
+            <div className="h-60 bg-yellow-100 relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-60 scale-110 group-hover:scale-100 transition-transform duration-500">
+              <Image 
+                src="/images/biljkasuncokret.jpg" 
+                alt="Suncokret" 
+                fill 
+                className="object-cover"
+              />
+            </div>
             </div>
             <div className="p-6">
               <div className="text-sm text-yellow-600 font-bold mb-2">NAŠA PRIČA</div>
