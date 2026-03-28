@@ -62,6 +62,12 @@ export default function Header() {
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all group-hover:w-full"></span>
               </Link>
             </li>
+            <li>
+              <Link href="/galerija" className={`hover:text-white cursor-pointer transition relative group ${scrolled ? 'text-yellow-100' : 'hover:text-yellow-900 text-gray-800'}`}>
+                Galerija
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
           </ul>
           
           {/* Cart Button */}
@@ -118,6 +124,11 @@ export default function Header() {
                <li>
                 <Link href="/o-nama" onClick={closeMobileMenu} className="hover:text-yellow-200 transition">
                   O nama
+                </Link>
+              </li>
+              <li>
+                <Link href="/galerija" onClick={closeMobileMenu} className="hover:text-yellow-200 transition">
+                  Galerija
                 </Link>
               </li>
             </ul>
