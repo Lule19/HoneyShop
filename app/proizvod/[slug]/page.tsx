@@ -98,11 +98,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 {/* Komponenta za dodavanje u korpu (Klijentska) */}
-                <AddToCartButton product={{ 
-                    title: product.title, 
-                    price: product.price.toString(), 
-                    image: product.image 
-                }} />
+                {product.available ? (
+                    <AddToCartButton product={{ 
+                        title: product.title, 
+                        price: product.price.toString(), 
+                        image: product.image 
+                    }} />
+                ) : (
+                    <div className="bg-red-50 text-red-600 font-bold p-4 rounded-xl text-center border border-red-100 flex items-center justify-center gap-2">
+                        <span>⚠️</span> Trenutno nedostupno
+                    </div>
+                )}
             </div>
         </div>
 

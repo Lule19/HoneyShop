@@ -49,6 +49,7 @@ export default function Home() {
               price={product.price.toString()}
               type={product.type}
               image={product.image}
+              available={product.available}
             />
           ))}
         </div>
