@@ -42,7 +42,7 @@ export default function Footer() {
              <div className="flex gap-4 mb-8 justify-center md:justify-start lg:justify-center">
                 {/* Instagram */}
                 <a 
-                  href="https://www.instagram.com/medexserbia/" 
+                  href="https://www.instagram.com/pcelinjakpetrovic/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="group transform hover:scale-110 transition duration-300"

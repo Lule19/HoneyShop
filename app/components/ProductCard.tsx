@@ -16,6 +16,7 @@ interface ProductProps {
 
 export default function ProductCard({ id, title, price, type, image, available }: ProductProps) {
   const { addToCart } = useCart();
+  const cropHigher = id === 'bagremov-med' || id === 'vocni-med';
 
   return (
     <div className={`bg-white rounded-2xl shadow-lg flex flex-col group h-full overflow-hidden transition-shadow border ${available ? 'hover:shadow-xl border-yellow-100' : 'border-gray-200 opacity-80 grayscale-[20%]'}`}>
@@ -26,6 +27,7 @@ export default function ProductCard({ id, title, price, type, image, available }
           alt={title}
           fill
           className={`object-cover transition-transform duration-700 ${available ? 'scale-110 group-hover:scale-100' : ''}`}
+          style={cropHigher ? { objectPosition: 'center 80%' } : undefined}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         {!available && (

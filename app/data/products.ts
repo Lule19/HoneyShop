@@ -1,5 +1,23 @@
 export const products = [
-    { 
+  { 
+      id: "bagremov-med",
+      title: "Bagremov Med", 
+      price: 1500, 
+      unit: "1kg",
+      type: "Najprodavanije", 
+      image: "/images/bagremov.jpg",
+      shortDescription: "Blag, svetao i lagan. Kralj među medovima.",
+      description: "Bagremov med je jedan od najcenjenijih vrsta meda na našim prostorima. Odlikuje ga izrazito svetla, gotovo prozirna boja i blag, prijatno sladak ukus koji ne dominira, zbog čega je omiljen kod dece. Zbog visokog sadržaja fruktoze, sporo kristališe i ostaje tečan mesecima. Sakupljan u čistim bagremovim šumama, ovaj med je prava riznica zdravlja.",
+      benefits: [
+        "Umiruje nervni sistem i pomaže kod nesanice",
+        "Odličan za disajne puteve i ublažavanje kašlja",
+        "Jača imunitet bez izazivanja alergijskih reakcija",
+        "Poboljšava varenje"
+      ],
+      usage: "Preporučuje se jedna kašičica ujutru na prazan stomak, ili pre spavanja u šolji toplog mleka.",
+      available: true
+    },  
+  { 
       id: "vocni-med",
       title: "Voćni Med", 
       unit: "1kg",
@@ -17,6 +35,7 @@ export const products = [
       usage: "Idealan kao namaz za palačinke, preliv za sladoled, dodatak ovsenoj kaši, smutijima ili jednostavno kašičica dnevno kao poslastica.",
       available: true
     },
+    
     { 
       id: "propolis-kapi",
       title: "Propolis kapi", 
@@ -35,24 +54,7 @@ export const products = [
       usage: "Razmutiti par kapi u toploj vodi, takodje par kapi može se dodati u čaj ili na kašičicu meda.",
       available: true
     },
-    { 
-      id: "bagremov-med",
-      title: "Bagremov Med", 
-      price: 1200, 
-      unit: "1kg",
-      type: "Najprodavanije", 
-      image: "/images/bagremov.jpg",
-      shortDescription: "Blag, svetao i lagan. Kralj među medovima.",
-      description: "Bagremov med je jedan od najcenjenijih vrsta meda na našim prostorima. Odlikuje ga izrazito svetla, gotovo prozirna boja i blag, prijatno sladak ukus koji ne dominira, zbog čega je omiljen kod dece. Zbog visokog sadržaja fruktoze, sporo kristališe i ostaje tečan mesecima. Sakupljan u čistim bagremovim šumama, ovaj med je prava riznica zdravlja.",
-      benefits: [
-        "Umiruje nervni sistem i pomaže kod nesanice",
-        "Odličan za disajne puteve i ublažavanje kašlja",
-        "Jača imunitet bez izazivanja alergijskih reakcija",
-        "Poboljšava varenje"
-      ],
-      usage: "Preporučuje se jedna kašičica ujutru na prazan stomak, ili pre spavanja u šolji toplog mleka.",
-      available: false
-    },
+    
     { 
       id: "livadski-med",
       title: "Livadski Med", 
