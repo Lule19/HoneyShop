@@ -16,25 +16,18 @@ interface ProductProps {
 
 export default function ProductCard({ id, title, price, type, image, available }: ProductProps) {
   const { addToCart } = useCart();
-  const cropHigher = id === 'bagremov-med' || id === 'vocni-med';
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg flex flex-col group h-full overflow-hidden transition-shadow border ${available ? 'hover:shadow-xl border-yellow-100' : 'border-gray-200 opacity-80 grayscale-[20%]'}`}>
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-yellow-100 flex flex-col group h-full">
       <Link href={`/proizvod/${id}`} className="block h-96 relative bg-yellow-50 overflow-hidden cursor-pointer">
         {/* Koristimo Next.js Image komponentu za optimizovane slike */}
         <Image 
           src={image} 
           alt={title}
           fill
-          className={`object-cover transition-transform duration-700 ${available ? 'scale-110 group-hover:scale-100' : ''}`}
-          style={cropHigher ? { objectPosition: 'center 80%' } : undefined}
+          className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
-        {!available && (
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <span className="bg-red-600 text-white font-bold px-6 py-2 rounded-full shadow-lg transform -rotate-12 tracking-wider text-xl uppercase">NEDOSTUPNO</span>
-          </div>
-        )}
       </Link>
       <div className="p-6 flex flex-col flex-grow">
         <span className="text-sm text-yellow-600 font-semibold uppercase tracking-wider mb-2">{type}</span>
