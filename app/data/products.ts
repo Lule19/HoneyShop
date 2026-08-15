@@ -43,7 +43,7 @@ export const products = [
     unit: "1kg",
     price: 1200,
     type: "Novo",
-    image: "/images/vocni-med.jpg",
+    image: "/images/vocnimed3.jpg",
     shortDescription: "Slatko-kiselkasta fuzija prirodnog meda, šljive, višnje i trešnje.",
     description:
       "Ovaj jedinstveni voćni med predstavlja pravu fuziju najkvalitetnijeg domaćeg meda i pažljivo odabranih ekstrakata šljive, višnje i trešnje. Spaja slatke i osvežavajuće kiselkaste note u fantastičan ukus. Bogat je vlaknima, antioksidansima i vitaminima, te izvanredno deluje na energiju, imunitet i probavu.",

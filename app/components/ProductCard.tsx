@@ -19,17 +19,18 @@ export default function ProductCard({ id, title, price, type, image, available }
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-yellow-100 flex flex-col group h-full">
-      <Link href={`/proizvod/${id}`} className="block h-96 relative bg-yellow-50 overflow-hidden cursor-pointer">
-        {/* Koristimo Next.js Image komponentu za optimizovane slike */}
+      <Link href={`/proizvod/${id}`} className="block relative aspect-4/5 bg-amber-100 overflow-hidden cursor-pointer">
         <Image 
           src={image} 
           alt={title}
           fill
-          className="object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+          className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          priority={false}
         />
+        <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
       </Link>
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         <span className="text-sm text-yellow-600 font-semibold uppercase tracking-wider mb-2">{type}</span>
         <Link href={`/proizvod/${id}`} className="hover:text-yellow-700 transition">
           <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
